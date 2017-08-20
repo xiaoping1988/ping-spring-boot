@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="filename">ping-app</Property>
+        <Property name="logPath">../logs/${filename}</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Console">
+            <MarkerFilter marker="TRACE" onMatch="DENY" onMismatch="ACCEPT" />
+            <PatternLayout>
+                <pattern>%d %highlight{%p} %style{%c{1.} [%t] %m}{bold,green}%n
+                </pattern>
+            </PatternLayout>
+        </Console>
+        <RollingFile name="RollingFile" filename="${logPath}/${filename}.log"
+                     filepattern="${logPath}/${filename}-%d{yyyyMMdd}.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5p %logger{36} - %msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            </Policies>
+            <DefaultRolloverStrategy max="20" />
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="${env:LOGGING_LEVEL_:-INFO}" includeLocation="false">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="RollingFile" />
+        </Root>
+    </Loggers>
+</Configuration>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="${daoClass}">
+	<select id="findByPk" parameterType="${entityClass}"
+		resultType="${entityClass}">
+        <![CDATA[
+            ${findByPk}
+        ]]>
+	</select>
+
+	<select id="find" resultType="${entityClass}">
+    		${find}
+    </select>
+
+	<insert id="insert" parameterType="${entityClass}">
+		${insert}
+	</insert>
+
+	<update id="updateByPk" parameterType="${entityClass}">
+			${updateByPk}
+	</update>
+	
+	<update id="updateBatchColumns">
+			${updateBatchColumns}
+	</update>	
+
+	<delete id="deleteByPk" parameterType="${entityClass}">
+		<![CDATA[
+			${deleteByPk}
+		]]>		
+	</delete>	 	 		 
+	
+	<delete id="deleteBatch">
+		${deleteBatch}
+	</delete>
+
+	<select id="count" resultType="Long" >
+		${count}
+	</select>
+	
+	<select id="countDistinctColumns" resultType="Long" >
+		${countDistinctColumns}
+	</select>
+	
+	<select id="sumColumn" resultType="java.math.BigDecimal" >
+		${sum}
+	</select>
+
+	<select id="maxColumn" resultType="java.math.BigDecimal" >
+		${max}
+	</select>
+
+	<select id="minColumn" resultType="java.math.BigDecimal" >
+		${min}
+	</select>
+
+	<select id="avgColumn" resultType="java.math.BigDecimal" >
+		${avg}
+	</select>
+
+	<select id="maxString" resultType="String" >
+    	${max}
+    </select>
+
+    <select id="minString" resultType="String" >
+    	${min}
+    </select>
+
+</mapper>	 		 

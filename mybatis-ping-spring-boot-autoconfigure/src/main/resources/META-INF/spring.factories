@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.mybatis.ping.spring.boot.autoconfigure.MybatisConfiguration,\
+com.mybatis.ping.spring.boot.autoconfigure.MybatisScannerConfiguration

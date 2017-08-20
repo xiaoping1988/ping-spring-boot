@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace和定义的Mapper接口对应，并实现其中的方法 -->
+<mapper namespace="common">
+	<!-- 自定义的条件 -->
+	<sql id="andCondition">
+		<if test="condition.operator!=null and (condition.operator.trim() =='in' or condition.operator.trim() =='not in')">
+			${condition.column} ${condition.operator}
+			<foreach item="one" index="index" collection="condition.newValue"
+				open="(" separator="," close=")">
+				#{one}
+			 </foreach>
+		</if>
+		<if test="condition.operator!=null and condition.operator.trim() !='in' and condition.operator.trim() !='not in'">
+			${condition.column} ${condition.operator} #{condition.newValue}
+		</if>
+	</sql>
+	
+	<!-- 
+	<sql id="orCondition">
+			
+		<if test="orCondition.operator!=null and orCondition.operator=='in'">
+			${orCondition.column} ${orCondition.operator}
+			<foreach item="one" index="index" collection="orCondition.newValue"
+				open="(" separator="," close=")">
+				#{one}
+			 </foreach>
+		</if>
+		<if test="orCondition.operator!=null and orCondition.operator!='in'">
+			${orCondition.column} ${orCondition.operator}
+			#{orCondition.newValue}
+		</if>
+	</sql>
+	 -->
+	 <!-- 自定义的条件 -->
+	<sql id="dynamicConditions">
+		<where>
+		<if test="conditions!=null">
+			<foreach collection="conditions" item="condition" index="index">
+				<if test="condition!=null and condition.newValue!=null">
+						AND <include refid="common.andCondition"/>
+				</if>
+			</foreach>
+		</if>	
+		</where>
+	</sql>
+	<sql id="updateColumns">
+		<if test="columns!=null">
+			<foreach item="one" index="index" collection="columns"
+				separator=",">
+				${one.column}=#{one.value}
+			 </foreach>
+		</if>
+	</sql>
+</mapper>
