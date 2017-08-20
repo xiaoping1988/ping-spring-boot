@@ -1,6 +1,5 @@
 package com.mybatis.ping.spring.boot.autoconfigure;
 
-import com.mybatis.ping.spring.boot.MybatisProperties;
 import com.mybatis.ping.spring.boot.extend.dao.SqlMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
@@ -8,11 +7,8 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.boot.autoconfigure.AutoConfigurationPackages;
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.util.CollectionUtils;
 
 import java.util.List;
 

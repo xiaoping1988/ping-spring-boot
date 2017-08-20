@@ -14,6 +14,8 @@ public class ResponseVO<T> extends ToStringModel {
 
     private T data;
 
+    public ResponseVO() {}
+
     public ResponseVO(int code, String msg, T data) {
         this.code = code;
         this.msg = msg;
