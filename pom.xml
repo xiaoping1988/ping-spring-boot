@@ -10,6 +10,8 @@
         <module>mybatis-ping-spring-boot-autoconfigure</module>
         <module>mybatis-ping-spring-boot-starter</module>
         <module>ping-spring-boot-samples</module>
+        <module>swagger-ping-spring-boot-autoconfigure</module>
+        <module>swagger-ping-spring-boot-starter</module>
     </modules>
 
     <properties>

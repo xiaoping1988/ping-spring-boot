@@ -4,6 +4,8 @@ import com.mybatis.ping.spring.boot.annotation.AutoIncrement;
 import com.mybatis.ping.spring.boot.annotation.Pk;
 import com.mybatis.ping.spring.boot.annotation.Table;
 import com.mybatis.ping.spring.boot.extend.entity.BaseTimeModel;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import org.springframework.util.Assert;
 
 /**
@@ -11,6 +13,7 @@ import org.springframework.util.Assert;
  * Created by liujiangping on 2017/8/20.
  */
 @Table("sys_user")
+@ApiModel("用户信息")
 public class User extends BaseTimeModel {
 
     /**
@@ -18,14 +21,19 @@ public class User extends BaseTimeModel {
      */
     @Pk
     @AutoIncrement
+    @ApiModelProperty("用户id")
     private Long user_id;
 
+    @ApiModelProperty("用户姓名")
     private String user_name;
 
+    @ApiModelProperty("用户账号")
     private String user_account;
 
+    @ApiModelProperty("用户年龄")
     private Integer user_age;
 
+    @ApiModelProperty("用户所在城市")
     private String user_city;
 
     public User () {}

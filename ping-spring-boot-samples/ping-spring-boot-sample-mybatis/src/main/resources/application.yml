@@ -41,16 +41,19 @@ mybatis:
 #  mapperLocations: classpath:mapper/*.xml,classpath:mapper/*/*.xml # 默认配置
 #  basePackage: com.ping.sample # 默认配置application类所在的包
 
+swagger.enable: true
 
 ---
 spring:
   profiles: env.prod #生产环境配置
-
+  swagger.enable: false
 
 ---
 spring:
   profiles: env.dev #开发环境配置
+  swagger.enable: true
 
 ---
 spring:
   profiles: env.ci #ci集成环境配置
+  swagger.enable: false

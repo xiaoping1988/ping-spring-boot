@@ -2,16 +2,22 @@ package com.ping.sample.vo;
 
 
 import com.mybatis.ping.spring.boot.extend.entity.ToStringModel;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Created by liujiangping on 2017/8/20.
  */
+@ApiModel("返回结果")
 public class ResponseVO<T> extends ToStringModel {
 
+    @ApiModelProperty("状态码")
     private int code;
 
+    @ApiModelProperty("提示信息")
     private String msg;
 
+    @ApiModelProperty("具体数据")
     private T data;
 
     public ResponseVO() {}
