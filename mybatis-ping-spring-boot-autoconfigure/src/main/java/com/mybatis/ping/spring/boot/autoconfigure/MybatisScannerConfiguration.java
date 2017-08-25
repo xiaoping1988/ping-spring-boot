@@ -7,6 +7,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.boot.autoconfigure.AutoConfigurationPackages;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -21,6 +22,7 @@ public class MybatisScannerConfiguration implements BeanFactoryAware {
     private BeanFactory beanFactory;
 
     @Bean
+    @ConditionalOnMissingBean
     public MapperScannerConfigurer mapperScannerConfigurer() {
         List<String> pkgs = AutoConfigurationPackages.get(beanFactory);
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();

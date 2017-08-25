@@ -5,7 +5,7 @@
     <parent>
         <artifactId>ping-spring-boot</artifactId>
         <groupId>com.github.xiaoping1988.spring.boot</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,7 +15,7 @@
         <dependency>
             <groupId>com.github.xiaoping1988.spring.boot</groupId>
             <artifactId>mybatis-ping-spring-boot-autoconfigure</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${ping.spring.boot.version}</version>
         </dependency>
     </dependencies>
 </project>
