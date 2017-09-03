@@ -2,7 +2,7 @@
 
 > 这是一个spring boot和mybatis、swagger集成的框架
 
-## 帮助文档
+## 帮助文档 示例项目:pring-spring-boot-sample-mybatis
 
 ### spring boot和mybatis集成
 
@@ -26,6 +26,8 @@ BaseTimeModel已继承BaseModel类，此类有两个时间数据属性create_tim
 
 @Table: 数据库表名
 
+@OrderBy: 排序
+
 @Pk: 是否是主键,支持联合主键
 
 @AutoIncrement: 如果是单一自增主键,务必在属性加上此注解
@@ -45,5 +47,26 @@ Service层规范:
 mapper文件位置在resources/mapper/,mapper文件的namespace必须是dao全路径名称,剩下的就跟平常写mybatis一样,id不能与基类dao中的方法名一样
 
 如果想自定义一个跟实体无关的Dao,只要继承SqlMapper就行
+
+具体可参考sample项目中的pring-spring-boot-sample-mybatis
+
+
+### spring boot 集成swagger
+
+maven引入如下starter
+
+    <dependency>
+        <groupId>com.github.xiaoping1988.spring.boot</groupId>
+        <artifactId>swagger-ping-spring-boot-starter</artifactId>
+        <version>1.0.1</version>
+    </dependency>
+    
+yml配置:
+
+swagger.enable: 开启或者关闭swagger,默认为true开启
+
+一般在生产环境关闭swagger
+
+集成之后,就可使用swagger注解来配置接口文档,文档查看地址:http://localhost:8080/swagger-ui.html
 
 具体可参考sample项目中的pring-spring-boot-sample-mybatis

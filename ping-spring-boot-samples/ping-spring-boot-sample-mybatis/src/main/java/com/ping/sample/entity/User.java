@@ -1,6 +1,7 @@
 package com.ping.sample.entity;
 
 import com.mybatis.ping.spring.boot.annotation.AutoIncrement;
+import com.mybatis.ping.spring.boot.annotation.OrderBy;
 import com.mybatis.ping.spring.boot.annotation.Pk;
 import com.mybatis.ping.spring.boot.annotation.Table;
 import com.mybatis.ping.spring.boot.extend.entity.BaseTimeModel;
@@ -21,6 +22,7 @@ public class User extends BaseTimeModel {
      */
     @Pk
     @AutoIncrement
+    @OrderBy(OrderBy.Order.DESC)
     @ApiModelProperty("用户id")
     private Long user_id;
 
