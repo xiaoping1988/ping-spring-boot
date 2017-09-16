@@ -9,4 +9,4 @@
       `create_time` datetime NOT NULL COMMENT '创建时间',
       `update_time` datetime DEFAULT NULL COMMENT '修改时间',
       PRIMARY KEY (`user_id`)
-    ) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8 COMMENT='用户表'
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户表'
