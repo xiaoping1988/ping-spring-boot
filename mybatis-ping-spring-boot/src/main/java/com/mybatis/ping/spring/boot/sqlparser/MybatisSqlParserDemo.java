@@ -45,7 +45,7 @@ public class MybatisSqlParserDemo {
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://100.73.22.8:3306/report_data?useUnicode=true&characterEncoding=utf-8&useSSL=false", "root", "JDB&bigdata2017");
+            conn = DriverManager.getConnection("", "", "");
             stmt = conn.prepareStatement(boundSql.getSql());
             handler.setParameters(stmt);
             rs = stmt.executeQuery();
