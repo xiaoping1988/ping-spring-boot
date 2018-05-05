@@ -94,17 +94,6 @@ public abstract class BaseJdbc {
         return new ArrayList<T>();
     }
 
-    public static void main(String[] args) {
-        Map<String, Object> map = new HashMap<>();
-        map.put("name", "消息");
-        map.put("age", 12);
-        List<Map<String, Object>> list = new ArrayList<>();
-        list.add(map);
-        list.add(map);
-        List<Test> res = populate(list, Test.class);
-        System.out.println(res);
-    }
-
     /**
      * 分页查询
      *

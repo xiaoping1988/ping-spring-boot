@@ -30,16 +30,12 @@ public class MapperCRUDFactory implements MapperCRUDBuilder{
     /**条件参数*/
     private String dynamicConditions = " <include refid=\"common.dynamicConditions\"/> ";
 
-    private static MapperCRUDFactory factory = null;
+    private static MapperCRUDFactory factory = new MapperCRUDFactory();
 
     private MapperCRUDFactory(){}
 
     public static synchronized MapperCRUDFactory getInstance(){
-        if(factory==null){
-            return new MapperCRUDFactory();
-        }else{
-            return factory;
-        }
+        return factory;
     }
 
     /**

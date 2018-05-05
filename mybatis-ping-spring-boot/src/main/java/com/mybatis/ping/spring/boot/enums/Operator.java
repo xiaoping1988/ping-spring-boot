@@ -44,7 +44,4 @@ public enum Operator {
 		sb.append("]");
 		return sb.toString().replaceFirst(",","");
 	}
-	public static void main(String[] args) {
-		System.out.println(getNames());
-	}
 }

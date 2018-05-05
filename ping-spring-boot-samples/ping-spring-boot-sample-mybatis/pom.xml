@@ -5,7 +5,7 @@
     <parent>
         <artifactId>ping-spring-boot-samples</artifactId>
         <groupId>com.github.xiaoping1988.spring.boot</groupId>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 

@@ -11,7 +11,7 @@ maven引入如下starter
     <dependency>
        <groupId>com.github.xiaoping1988.spring.boot</groupId>
        <artifactId>mybatis-ping-spring-boot-starter</artifactId>
-       <version>1.0.1</version>
+       <version>1.0.2</version>
     </dependency>
     
 此框架实现了单表的增删改查等90%左右的功能,支持mysql和oracle数据库
@@ -58,7 +58,7 @@ maven引入如下starter
     <dependency>
         <groupId>com.github.xiaoping1988.spring.boot</groupId>
         <artifactId>swagger-ping-spring-boot-starter</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
     </dependency>
     
 yml配置:
